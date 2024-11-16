@@ -1,0 +1,11 @@
+val services = gatt?.getServices()
+  var characteristic: BluetoothGattCharacteristic? = null
+  services!!.forEach { service ->
+      if (service.uuid.toString() == "00001815-0000-1000-8000-00805f9b34fb") {
+          service.characteristics.forEach {chara ->
+              if (chara.uuid.toString() == "91a7598f-9df4-1ee4-f618-39b97e8d1971" ){
+                  characteristic = service?.getCharacteristic(UUID.fromString("91a7598f-9df4-1ee4-f618-39b97e8d1971"))
+          }
+      }
+  }
+  }
